@@ -10,7 +10,6 @@ cd ~ && wget https://gist.githubusercontent.com/hegemanjr/6db134604a312ed2d9de65
 # Install apps with apt and snap
 echo "Install apps with apt and snap"
 sudo apt install curl chromium-browser flameshot virtualbox gparted handbrake obs-studio gimp filezilla vlc slack neofetch -y
-sudo snap install discord youtube-music-desktop-app postman
 
 dl_dir=~/Downloads
 
@@ -33,6 +32,17 @@ else
   echo "Skipping GitKraken."
 fi
 
+
+read -p "Do you want to install Discord? (y/n) " install_gitkraken
+
+if [[ $install_discord =~ ^[Yy]$ ]]; then
+  echo "Installing Discord..."
+  cd ~/Downloads
+  wget "https://discord.com/api/download?platform=linux&format=deb" -O discord.deb
+  sudo apt install ./discord.deb
+else
+  echo "Skipping Discord."
+fi
 
 read -p "Do you want to adjust clock so it works with Windows dual boot? (y/n) " adjust_clock
 
