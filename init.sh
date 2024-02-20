@@ -33,7 +33,7 @@ else
 fi
 
 
-read -p "Do you want to install Discord? (y/n) " install_gitkraken
+read -p "Do you want to install Discord? (y/n) " install_discord
 
 if [[ $install_discord =~ ^[Yy]$ ]]; then
   echo "Installing Discord..."
