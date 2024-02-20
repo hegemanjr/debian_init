@@ -9,7 +9,7 @@ cd ~ && wget https://gist.githubusercontent.com/hegemanjr/6db134604a312ed2d9de65
 
 # Install apps with apt and snap
 echo "Install apps with apt and snap"
-sudo apt install curl chromium-browser flameshot virtualbox gparted handbrake obs-studio gimp filezilla vlc slack neofetch -y
+sudo apt install curl flameshot gparted handbrake obs-studio gimp filezilla vlc slack neofetch -y
 
 dl_dir=~/Downloads
 
