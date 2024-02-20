@@ -33,6 +33,18 @@ else
 fi
 
 
+
+read -p "Do you want to install Discord? (y/n) " install_discord
+
+if [[ $install_discord =~ ^[Yy]$ ]]; then
+  echo "Installing Discord..."
+  cd ~/Downloads
+  wget https://discord.com/api/download?platform=linux&format=deb
+  sudo apt install ./discord-*.deb -y
+else
+  echo "Skipping Discord."
+fi
+
 read -p "Do you want to install Discord? (y/n) " install_discord
 
 if [[ $install_discord =~ ^[Yy]$ ]]; then
