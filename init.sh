@@ -33,6 +33,23 @@ else
 fi
 
 
+read -p "Do you want to install Docker and Lando? (y/n) " install_lando
+
+if [[ $install_lando =~ ^[Yy]$ ]]; then
+  echo "Installing Docker and Lando..."
+  cd ~/Downloads/
+  curl -fsSL https://get.docker.com -o install-docker.sh
+  sudo sh install-docker.sh
+  sudo apt install docker-compose
+  sudo groupadd docker
+  sudo usermod -aG docker $USER
+  newgrp docker
+  wget https://files.lando.dev/installer/lando-x64-stable.deb
+  sudo dpkg -i lando-x64-stable.deb
+  sudo apt install --fix-broken
+else
+  echo "Skipping Docker and Lando."
+fi
 
 read -p "Do you want to install Discord? (y/n) " install_discord
 
