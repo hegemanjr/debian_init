@@ -7,8 +7,8 @@ sudo apt upgrade -y
 # Add bash aliases
 cd ~ && wget https://gist.githubusercontent.com/hegemanjr/6db134604a312ed2d9de65b6fe033a54/raw/.bash_aliases
 
-# Install apps with apt and snap
-echo "Install apps with apt and snap"
+# Install apps with apt
+echo "Install apps with apt"
 sudo apt install curl flameshot gparted handbrake obs-studio gimp filezilla vlc slack neofetch -y
 
 dl_dir=~/Downloads
@@ -57,22 +57,10 @@ if [[ $install_discord =~ ^[Yy]$ ]]; then
   echo "Installing Discord..."
   cd ~/Downloads
   wget https://discord.com/api/download?platform=linux&format=deb
-  sudo apt install ./discord-*.deb -y
+  sudo apt install ./discord-*.deb
 else
   echo "Skipping Discord."
 fi
-
-read -p "Do you want to install Discord? (y/n) " install_discord
-
-if [[ $install_discord =~ ^[Yy]$ ]]; then
-  echo "Installing Discord..."
-  cd ~/Downloads
-  wget "https://discord.com/api/download?platform=linux&format=deb" -O discord.deb
-  sudo apt install ./discord.deb
-else
-  echo "Skipping Discord."
-fi
-
 
 read -p "Do you want to install Brave Browser? (y/n) " install_brave
 
@@ -96,7 +84,7 @@ else
   echo "Skipping adjust clock."
 fi
 
-read -p "Do you want to install DisplayLink? First download the 'Synaptics APT Repository' package from https://www.synaptics.com/products/displaylink-graphics/downloads/ubuntu to  (y/n) " install_displaylink
+read -p "Do you want to install DisplayLink? First download the 'Synaptics APT Repository' package from *** https://www.synaptics.com/products/displaylink-graphics/downloads/ubuntu *** to  (y/n) " install_displaylink
 
 if [[ $install_displaylink =~ ^[Yy]$ ]] && [[ -f ~/Downloads/synaptics-repository-keyring.deb ]]; then
   echo "Installing DisplayLink..."
