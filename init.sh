@@ -133,3 +133,12 @@ if [[ $install_makemkv =~ ^[Yy]$ ]]; then
 else
   echo "Skipping MakeMKV."
 fi
+
+read -p "Do you want to reboot? (y/n) " wanna_reboot
+
+if [[ $wanna_reboot =~ ^[Yy]$ ]]; then
+  echo "Rebooting..."
+  sudo reboot
+else
+  echo "Skipping reboot."
+fi
