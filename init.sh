@@ -108,11 +108,12 @@ else
 fi
 
 
-read -p "Do you want to install MakeMKV? First, download both files from https://forum.makemkv.com/forum/viewtopic.php?t=224, then type (y/n) " install_makemkv
+read -p "Do you want to install MakeMKV? First, download both files from *** https://forum.makemkv.com/forum/viewtopic.php?t=224 ***, then type (y/n) " install_makemkv
 
 if [[ $install_makemkv =~ ^[Yy]$ ]]; then
   echo "Installing MakeMKV..."
   cd ~/Downloads
+  sudo apt-get install build-essential pkg-config libc6-dev libssl-dev libexpat1-dev libavcodec-dev libgl1-mesa-dev qtbase5-dev zlib1g-dev
   tar -xzf ~/Downloads/makemkv-oss-*.tar.gz
   tar -xzf ~/Downloads/makemkv-bin-*.tar.gz
 
